@@ -1,5 +1,96 @@
 # 版本更新记录
 
+# v2.2.32 - 2022-05-16
+
+## 修复
+
+- [#4745](https://github.com/hyperf/hyperf/pull/4745) 当使用 `kafka` 组件的 `Producer::close` 方法时，修复可能抛出空指针异常的问题。
+- [#4754](https://github.com/hyperf/hyperf/pull/4754) 通过配置 `monolog>=2.6.0` 解决新版本的 `monolog` 无法正常工作的问题。
+
+## 优化
+
+- [#4738](https://github.com/hyperf/hyperf/pull/4738) 当使用 `kafka` 组件时，如果没有设置 `GroupID` 则自动配置一个。
+
+# v2.2.31 - 2022-04-18
+
+## 修复
+
+- [#4677](https://github.com/hyperf/hyperf/pull/4677) 修复使用 `kafka` 发布者后，会导致进程无法正常退出的问题。
+- [#4686](https://github.com/hyperf/hyperf/pull/4687) 修复使用 `WebSocket` 服务时，因为解析 `Request` 失败会导致进程崩溃的问题。
+
+## 新增
+
+- [#4576](https://github.com/hyperf/hyperf/pull/4576) 为 `RPC` 客户端的节点，增加路由前缀 `path_prefix`。
+- [#4683](https://github.com/hyperf/hyperf/pull/4683) 新增容器方法 `unbind()` 用来从容器中解绑对象。
+
+# v2.2.30 - 2022-04-04
+
+## 修复
+
+- [#4648](https://github.com/hyperf/hyperf/pull/4648) 当使用 `retry` 组件中的熔断器时，修复在 `open` 状态下，无法自动调用 `fallback` 方法的问题。
+- [#4657](https://github.com/hyperf/hyperf/pull/4657) 修复使用 `session` 中的文件适配器时，相同的 `Session ID` 在被重写后，最后修改时间仍是上次修改时间的问题。
+
+## 新增
+
+- [#4646](https://github.com/hyperf/hyperf/pull/4646) 为 `Redis` 哨兵模式增加设置密码的功能。
+
+# v2.2.29 - 2022-03-28
+
+## 修复
+
+- [#4620](https://github.com/hyperf/hyperf/pull/4620) 修复 `Hyperf\Memory\LockManager::initialize()` 方法中，`$filename` 默认值错误的问题。
+
+# v2.2.28 - 2022-03-14
+
+## 修复
+
+- [#4588](https://github.com/hyperf/hyperf/pull/4588) 修复 `database` 组件不支持 `bit` 类型的问题。
+- [#4589](https://github.com/hyperf/hyperf/pull/4589) 修复使用 `Nacos` 时，无法正确的注册临时实例的问题。
+
+## 新增
+
+- [#4580](https://github.com/hyperf/hyperf/pull/4580) 新增方法 `Hyperf\Utils\Coroutine\Concurrent::getChannel()`。
+
+## 优化
+
+- [#4602](https://github.com/hyperf/hyperf/pull/4602) 将方法 `Hyperf\ModelCache\Manager::formatModels()` 更改为公共方法。
+
+# v2.2.27 - 2022-03-07
+
+## 优化
+
+- [#4572](https://github.com/hyperf/hyperf/pull/4572) 当负载均衡器 `hyperf/load-balancer` 选择节点失败时，使用 `Hyperf\LoadBalancer\Exception\RuntimeException` 代替 `\RuntimeException`。
+
+# v2.2.26 - 2022-02-21
+
+## 修复
+
+- [#4536](https://github.com/hyperf/hyperf/pull/4536) 修复使用 `JsonRPC` 时，会设置多次 `content-type` 的问题。
+
+## 新增
+
+- [#4527](https://github.com/hyperf/hyperf/pull/4527) 为 `Hyperf\Database\Schema\Blueprint` 增加了一些比较有用的方法。
+
+## 优化
+
+- [#4514](https://github.com/hyperf/hyperf/pull/4514) 通过使用小写 `key` 获取 `HTTP` 的 `Header` 信息，提升一部分性能。
+- [#4521](https://github.com/hyperf/hyperf/pull/4521) 在使用 Redis 的哨兵模式时，如果第一个哨兵节点连接失败，则尝试连接其余哨兵节点。
+- [#4529](https://github.com/hyperf/hyperf/pull/4529) 将组件 `hyperf/context` 从组件 `hyperf/utils` 中分离出来。
+
+# v2.2.25 - 2022-01-30
+
+## 修复
+
+- [#4484](https://github.com/hyperf/hyperf/pull/4484) 修复使用 `Nacos v2.0.4` 版本时，服务是否注册过，判断有误的问题。
+
+## 新增
+
+- [#4477](https://github.com/hyperf/hyperf/pull/4477) 为 `Hyperf\HttpServer\Request` 新增 `Macroable` 支持。
+
+## 优化
+
+- [#4254](https://github.com/hyperf/hyperf/pull/4254) 当使用 `Hyperf\Di\ScanHandlerPcntlScanHandler` 时，增加 `grpc.enable_fork_support` 检测。
+
 # v2.2.24 - 2022-01-24
 
 ## 修复

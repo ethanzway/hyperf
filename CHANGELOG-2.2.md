@@ -1,4 +1,105 @@
-# v2.2.25 - TBD
+# v2.2.33 - TBD
+
+## Added
+
+- [#4763](https://github.com/hyperf/hyperf/pull/4763) Added validation rule `array:key1,key2` which make sure the array has no keys other than `key1` and `key2`.
+
+# v2.2.32 - 2022-05-16
+
+## Fixed
+
+- [#4745](https://github.com/hyperf/hyperf/pull/4745) Fixed null pointer exception when using `Producer::close`.
+- [#4754](https://github.com/hyperf/hyperf/pull/4754) Fixed the bug that monolog does not work in `2.6.0` by configuring `conflict` with `monolog>=2.6.0`.
+
+## Optimized
+
+- [#4738](https://github.com/hyperf/hyperf/pull/4738) Configuring a default groupId when it is null when using `hyperf/kafka`.
+
+# v2.2.31.1 - 2022-04-18
+
+## Fixed
+
+- [#4692](https://github.com/hyperf/hyperf/pull/4692) Fixed type hint error for node `$weight` cased by nacos driver.
+
+# v2.2.31 - 2022-04-18
+
+## Fixed
+
+- [#4677](https://github.com/hyperf/hyperf/pull/4677) Fixed bug that process exit failed when using kafka producer.
+- [#4686](https://github.com/hyperf/hyperf/pull/4687) Fixed bug that server shutdown when parse request failed for websocket server.
+
+## Added
+
+- [#4576](https://github.com/hyperf/hyperf/pull/4576) Support `path_prefix` for `node` when using `rpc-client`.
+- [#4683](https://github.com/hyperf/hyperf/pull/4683) Added `Container::unbind()` to unbind an arbitrary resolved entry.
+
+# v2.2.30 - 2022-04-04
+
+## Fixed
+
+- [#4648](https://github.com/hyperf/hyperf/pull/4648) Fixed bug that circuit breaker couldn't call fallback on `open` state when using `hyperf/retry`.
+- [#4657](https://github.com/hyperf/hyperf/pull/4657) Fixed bug that last modified time was not updated after write session again when using `hyperf/session`.
+
+## Added
+
+- [#4646](https://github.com/hyperf/hyperf/pull/4646) Support setting `auth` for `RedisSentinel`.
+
+# v2.2.29 - 2022-03-28
+
+## Fixed
+
+- [#4620](https://github.com/hyperf/hyperf/pull/4620) Fixed bug that the file name should be an empty string by default for `Hyperf\Memory\LockManager`.
+
+# v2.2.28 - 2022-03-14
+
+## Fixed
+
+- [#4588](https://github.com/hyperf/hyperf/pull/4588) Fixed bug that `database` does not support `bit`.
+- [#4589](https://github.com/hyperf/hyperf/pull/4589) Fixed bug that ephemeral instance register failed when using nacos.
+
+## Added
+
+- [#4580](https://github.com/hyperf/hyperf/pull/4580) Added method `Hyperf\Utils\Coroutine\Concurrent::getChannel()`.
+
+## Optimized
+
+- [#4603](https://github.com/hyperf/hyperf/pull/4603) Make public for method `Hyperf\ModelCache\Manager::formatModels()`.
+
+# v2.2.27 - 2022-03-07
+
+## Optimized
+
+- [#4572](https://github.com/hyperf/hyperf/pull/4572) Use Hyperf\LoadBalancer\Exception\RuntimeException instead of \RuntimeException for `hyperf/load-balancer`.
+
+# v2.2.26 - 2022-02-21
+
+## Fixed
+
+- [#4536](https://github.com/hyperf/hyperf/pull/4536) Fixed bug that response header `content-type` will be set more than once sometimes when using json-rpc.
+
+## Added
+
+- [#4527](https://github.com/hyperf/hyperf/pull/4527) Added some useful methods for `Hyperf\Database\Schema\Blueprint`.
+
+## Optimized
+
+- [#4514](https://github.com/hyperf/hyperf/pull/4514) Improved some performance by using lowercase headers.
+- [#4521](https://github.com/hyperf/hyperf/pull/4521) Try to connect to another one when connected redis sentinel failed.
+- [#4529](https://github.com/hyperf/hyperf/pull/4529) Split `hyperf/context` from `hyperf/utils`.
+
+# v2.2.25 - 2022-01-30
+
+## Fixed
+
+- [#4484](https://github.com/hyperf/hyperf/pull/4484) Fixed bug that `NacosDriver::isRegistered` does not work when using nacos `2.0.4`.
+
+## Added
+
+- [#4477](https://github.com/hyperf/hyperf/pull/4477) Support `Macroable` for `Hyperf\HttpServer\Request`. 
+
+## Optimized
+
+- [#4254](https://github.com/hyperf/hyperf/pull/4254) Added check of `grpc.enable_fork_support` option and `pcntl` extension.
 
 # v2.2.24 - 2022-01-24
 
